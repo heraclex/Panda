@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using PandaBookStore.Data.Entities;
 using JetBrains.Annotations;
+using Microsoft.Extensions.Configuration;
 
 namespace PandaBookStore.Data
 {
@@ -11,7 +12,9 @@ namespace PandaBookStore.Data
     {
         private string connectionString = string.Empty;
 
-        #region properties
+        private IConfigurationRoot configurationRoot;
+
+        #region DbSets
 
         public DbSet<Book> Books { get; set; }
 
@@ -33,15 +36,16 @@ namespace PandaBookStore.Data
 
         #endregion
 
-        public StoreContext(string connStr)
+        public StoreContext(DbContextOptions opt) : base(opt) //IConfigurationRoot configurationRoot)
         {
-            this.connectionString = connStr;
+            //this.connectionString = connStr;
+            //this.configurationRoot = configurationRoot;
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer(this.connectionString);
+            //optionsBuilder.UseSqlServer(this.connectionString);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

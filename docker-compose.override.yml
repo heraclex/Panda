@@ -1,12 +1,12 @@
 version: '3'
 
 services:
-  webapp:
+  pandabookstore.webapp:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
       - "80"
-  pandabookstore.webapp:
+  pandabookstore.webapi:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
@@ -15,4 +15,5 @@ networks:
   default:
     external:
       name: nat
+
 

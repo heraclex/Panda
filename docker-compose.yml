@@ -12,3 +12,9 @@ services:
     build:
       context: ./PandaBookStore.WebApp
       dockerfile: Dockerfile
+
+  pandabookstore.webapi:
+    image: pandabookstore.webapi
+    build:
+      context: ./../PandaBookStore.WebApi
+      dockerfile: Dockerfile

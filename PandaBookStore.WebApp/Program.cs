@@ -19,7 +19,7 @@ namespace PandaBookStore.WebApp
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
+                .UseStartup<Startup>()                
                 .Build();
     }
 }

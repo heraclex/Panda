@@ -23,14 +23,19 @@ namespace PandaBookStore.WebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<StoreContext>(connStr => Configuration.GetConnectionString("StoreContextConnection"));
-
+            //services.AddDbContext<StoreContext>(
+            //    connStr => Configuration.GetConnectionString("StoreContextConnection"));
+            
+            // Add framework services.
+            services.AddDbContext<StoreContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("StoreContextConnection")));
+            services.AddTransient<StoreContextSeedData>();
             services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-        {
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, StoreContextSeedData seeder)
+        {            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -49,6 +54,8 @@ namespace PandaBookStore.WebApp
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            seeder.EnsureSeedData(env.ContentRootPath + "//books").Wait();
         }
     }
 }

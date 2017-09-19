@@ -5,11 +5,9 @@ VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{7BB3CF5B-D660-43C7-86C6-1EE21AA15D71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PandaBookStore.Data", "PandaBookStore.Data\PandaBookStore.Data.csproj", "{472783EA-06AB-442B-970F-56E888D3BFB2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PandaBookStore.Data", "PandaBookStore.Data\PandaBookStore.Data.csproj", "{472783EA-06AB-442B-970F-56E888D3BFB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PandaBookStore.WebApp", "PandaBookStore.WebApp\PandaBookStore.WebApp.csproj", "{8980A6AE-F4F2-4DDB-9C1A-570CE86D6979}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{90DCA896-537D-4802-8442-E956D420D333}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PandaBookStore.WebApp", "PandaBookStore.WebApp\PandaBookStore.WebApp.csproj", "{8980A6AE-F4F2-4DDB-9C1A-570CE86D6979}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +27,6 @@ Global
 		{8980A6AE-F4F2-4DDB-9C1A-570CE86D6979}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8980A6AE-F4F2-4DDB-9C1A-570CE86D6979}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8980A6AE-F4F2-4DDB-9C1A-570CE86D6979}.Release|Any CPU.Build.0 = Release|Any CPU
-		{90DCA896-537D-4802-8442-E956D420D333}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{90DCA896-537D-4802-8442-E956D420D333}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{90DCA896-537D-4802-8442-E956D420D333}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{90DCA896-537D-4802-8442-E956D420D333}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
