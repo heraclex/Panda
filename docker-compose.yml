@@ -1,20 +1,8 @@
 version: '3'
 
 services:
-  webapp:
-    image: webapp
-    build:
-      context: ./WebApp
-      dockerfile: Dockerfile
-
   pandabookstore.webapp:
     image: pandabookstore.webapp
     build:
       context: ./PandaBookStore.WebApp
-      dockerfile: Dockerfile
-
-  pandabookstore.webapi:
-    image: pandabookstore.webapi
-    build:
-      context: ./../PandaBookStore.WebApi
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile  
