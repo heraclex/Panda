@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using PandaBookStore.Data;
+using PandaBookStore.Data.Entities;
 
 namespace PandaBookStore.WebApp
 {
@@ -22,14 +23,15 @@ namespace PandaBookStore.WebApp
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
-            //services.AddDbContext<StoreContext>(
-            //    connStr => Configuration.GetConnectionString("StoreContextConnection"));
-            
+        {            
             // Add framework services.
             services.AddDbContext<StoreContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("StoreContextConnection")));
+
             services.AddTransient<StoreContextSeedData>();
+
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+
             services.AddMvc();
         }
 
@@ -55,7 +57,8 @@ namespace PandaBookStore.WebApp
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            seeder.EnsureSeedData(env.ContentRootPath + "//books").Wait();
+            // insert data into database
+            seeder.EnsureSeedData(env.ContentRootPath + "//books").Wait();            
         }
     }
 }

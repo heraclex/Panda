@@ -5,11 +5,19 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using PandaBookStore.WebApp.Models;
+using PandaBookStore.Data;
+using PandaBookStore.Data.Entities;
 
 namespace PandaBookStore.WebApp.Controllers
 {
     public class HomeController : Controller
     {
+
+        public HomeController(IRepository<Book> repository)
+        {
+            var result = repository.Table.ToList();
+        }
+
         public IActionResult Index()
         {
             return View();

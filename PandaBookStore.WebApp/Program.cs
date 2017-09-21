@@ -7,6 +7,7 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using PandaBookStore.WebApp.Models;
 
 namespace PandaBookStore.WebApp
 {
@@ -14,7 +15,9 @@ namespace PandaBookStore.WebApp
     {
         public static void Main(string[] args)
         {
-            BuildWebHost(args).Run();
+            //var thread = new TaskThread();
+            //thread.InitTimer();
+            BuildWebHost(args).Run();            
         }
 
         public static IWebHost BuildWebHost(string[] args) =>

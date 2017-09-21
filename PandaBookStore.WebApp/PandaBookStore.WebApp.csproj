@@ -23,6 +23,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Models\TaskThread.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\PandaBookStore.Data\PandaBookStore.Data.csproj" />
   </ItemGroup>
 
