@@ -7,16 +7,17 @@ using System.Threading.Tasks;
 
 namespace PandaBookStore.Data.Entities
 {
-    public class Recommendation : BaseEntity
+    public class Comment : BaseEntity
     {
-        [StringLength(1000, MinimumLength = 3)]
-        public string Comment {get;set;}
+        [StringLength(1000, MinimumLength = 5)]
+        public string Content {get;set;}
 
         public int CustomerId { get; set; }
 
         public int? BookId { get; set; }
 
         public virtual Customer Customer { get; set; }
+
         public virtual Book Book { get; set; }
     }
 }

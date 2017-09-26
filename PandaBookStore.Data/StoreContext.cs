@@ -28,7 +28,7 @@ namespace PandaBookStore.Data
 
         public DbSet<Role> Roles { get; set; }
 
-        public DbSet<Recommendation> Recommendations { get; set; }
+        public DbSet<Comment> Recommendations { get; set; }
 
         public DbSet<Picture> Pictures { get; set; }
 

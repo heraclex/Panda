@@ -1,12 +1,12 @@
-﻿using PandaBookStore.Data.Entities;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System;
+using System.Text;
 
-namespace PandaBookStore.Data.Entities
+namespace PandaBookStore.Service.Models
 {
-    public class Book : BaseEntity
+    public class BookModel :BaseModel
     {
-        [StringLength(50, MinimumLength = 1)]
         public string Name { get; set; }
 
         [StringLength(50, MinimumLength = 1)]
@@ -26,8 +26,6 @@ namespace PandaBookStore.Data.Entities
 
         public int CategoryId { get; set; }
 
-        public virtual Category Category { get; set; }
-
         public int PictureId { get; set; }
 
         /// <summary>
@@ -39,19 +37,5 @@ namespace PandaBookStore.Data.Entities
         /// Gets or sets the reserved quantity (ordered but not shipped yet)
         /// </summary>
         public int ReservedQuantity { get; set; }
-
-        public virtual Picture Picture { get; set; }
-
-        //public string GetPictureUrl()
-        //{
-        //    var pictureBinaryInBase64String = string.Empty;
-        //    if (this.Picture != null)
-        //    {
-        //        pictureBinaryInBase64String = Convert.ToBase64String(this.Picture.PictureBinary, 0, this.Picture.PictureBinary.Length);
-        //    }
-             
-        //    return "data:image/png;base64," + pictureBinaryInBase64String;
-        //}
-
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PandaBookStore.Data.Entities
+namespace PandaBookStore.Data.Const
 {
     /// <summary>
     /// Represents an order status enumeration

@@ -154,18 +154,17 @@ namespace PandaBookStore.Data
                             };
                             var book = new Book()
                             {
-                                BookName = file.Name.Replace(".png", string.Empty),
+                                Name = file.Name.Replace(".png", string.Empty),
                                 AuthorName = "Author" + file.Name.Replace(".png", string.Empty),
                                 CreatedDate = DateTime.Now,
                                 Picture = pic,
-                                PublishedYear = random.Next(2000, 2018).ToString(), // Random year: >= 1990 and < 2018
+                                PublishedDate = this.GetRandomDate(DateTime.UtcNow.AddDays(-3000), DateTime.UtcNow), // Random year: >= 1990 and < 2018
                                 CategoryId = random.Next(1, 8), // Random CategoryId: >= 1 and < 8
-                                Price = random.Next(20, 60), // Random price: >= 1 and < 60
-                                Quantity = random.Next(1, 50), // Random QuantityInUnit: >= 1 and < 50
+                                Price = random.Next(10, 99), // Random price: >= 10 and < 99
+                                StockQuantity = random.Next(10, 20), // Random QuantityInUnit: >= 10 and < 20
                                 Description = "Description for" + file.Name.Replace(".png", string.Empty),
                                 Publisher = "Publisher Test",
-                                IsDelete = false,
-                                NewRelease = false,
+                                IsDeleted = false,
                                 Rate = 5
                             };
                             context.Books.Add(book);
@@ -175,6 +174,17 @@ namespace PandaBookStore.Data
 
                 await this.context.SaveChangesAsync();
             }            
+        }
+        
+        public DateTime GetRandomDate(DateTime from, DateTime to)
+        {
+            var rnd = new Random();
+
+            var range = to - from;
+
+            var randTimeSpan = new TimeSpan((long)(rnd.NextDouble() * range.Ticks));
+
+            return from + randTimeSpan;
         }
 
         #endregion

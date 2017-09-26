@@ -45,6 +45,6 @@ namespace PandaBookStore.Data.Entities
 
         public virtual Role Role { get; set; }
 
-        public virtual List<Recommendation> Recommendations { get; set; }
+        public virtual List<Comment> Recommendations { get; set; }
     }
 }

@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using PandaBookStore.Data;
-using PandaBookStore.Data.Entities;
+using PandaBookStore.Service;
+using PandaBookStore.WebApp.Initializer;
 
 namespace PandaBookStore.WebApp
 {
@@ -31,8 +28,9 @@ namespace PandaBookStore.WebApp
             services.AddTransient<StoreContextSeedData>();
 
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-
-            services.AddMvc();
+            services.AddScoped<IBookStoreService, BookStoreService>();            
+            
+            services.AddMvc();            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,7 +56,9 @@ namespace PandaBookStore.WebApp
             });
 
             // insert data into database
-            seeder.EnsureSeedData(env.ContentRootPath + "//books").Wait();            
+            seeder.EnsureSeedData(env.ContentRootPath + "//books").Wait();
+            // Init Profile Mappings
+            AutoMapperInitializer.RegisterMappings();
         }
     }
 }

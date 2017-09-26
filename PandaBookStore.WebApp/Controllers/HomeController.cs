@@ -7,15 +7,16 @@ using Microsoft.AspNetCore.Mvc;
 using PandaBookStore.WebApp.Models;
 using PandaBookStore.Data;
 using PandaBookStore.Data.Entities;
+using PandaBookStore.Service;
 
 namespace PandaBookStore.WebApp.Controllers
 {
     public class HomeController : Controller
     {
 
-        public HomeController(IRepository<Book> repository)
+        public HomeController(IBookStoreService service)
         {
-            var result = repository.Table.ToList();
+            //var result = repository.Table.ToList();
         }
 
         public IActionResult Index()
