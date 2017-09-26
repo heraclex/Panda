@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace PandaBookStore.Service
 {
-    public class BookStoreService : IBookStoreService
+    public class BookStoreService : IBookService
     {
         public BookStoreService(IRepository<Book> bookRepo)
         {

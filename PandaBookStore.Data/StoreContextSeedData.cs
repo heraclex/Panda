@@ -156,7 +156,8 @@ namespace PandaBookStore.Data
                             {
                                 Name = file.Name.Replace(".png", string.Empty),
                                 AuthorName = "Author" + file.Name.Replace(".png", string.Empty),
-                                CreatedDate = DateTime.Now,
+                                CreatedDate = DateTime.UtcNow,
+                                ModifiedDate = DateTime.UtcNow,
                                 Picture = pic,
                                 PublishedDate = this.GetRandomDate(DateTime.UtcNow.AddDays(-3000), DateTime.UtcNow), // Random year: >= 1990 and < 2018
                                 CategoryId = random.Next(1, 8), // Random CategoryId: >= 1 and < 8

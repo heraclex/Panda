@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PandaBookStore.Service
 {
-    public interface IBookStoreService
+    public interface IBookService : IService
     {
     }
 }

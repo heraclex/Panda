@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using PandaBookStore.Data;
 using PandaBookStore.Service;
 using PandaBookStore.WebApp.Initializer;
+using PandaBookStore.WebApp.Initializers;
 
 namespace PandaBookStore.WebApp
 {
@@ -28,9 +29,11 @@ namespace PandaBookStore.WebApp
             services.AddTransient<StoreContextSeedData>();
 
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-            services.AddScoped<IBookStoreService, BookStoreService>();            
+            //services.AddScoped<IBookService, BookStoreService>();            
             
-            services.AddMvc();            
+            services.AddMvc();
+
+            AppServiceInitializer.RegisterDI(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
