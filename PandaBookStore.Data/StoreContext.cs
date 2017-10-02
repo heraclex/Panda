@@ -32,7 +32,7 @@ namespace PandaBookStore.Data
 
         public DbSet<Picture> Pictures { get; set; }
 
-        public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Message> Contacts { get; set; }
 
         #endregion
 

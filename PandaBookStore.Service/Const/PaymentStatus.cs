@@ -4,32 +4,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PandaBookStore.Data.Const
+namespace PandaBookStore.Service
 {
     /// <summary>
-    /// Represents an order status enumeration
+    /// Represents a payment status enumeration
     /// </summary>
-    public enum OrderStatus
+    public enum PaymentStatus
     {
         /// <summary>
         /// Pending
         /// </summary>
         Pending = 10,
         /// <summary>
-        /// Processing
+        /// Authorized
         /// </summary>
-        Processing = 20,
+        Authorized = 20,
         /// <summary>
-        /// Complete
+        /// Paid
         /// </summary>
-        Complete = 30,
+        Paid = 30,
         /// <summary>
-        /// Cancelled
+        /// Partially Refunded
         /// </summary>
-        Cancelled = 40,
+        PartiallyRefunded = 35,
         /// <summary>
-        /// Deliveried
+        /// Refunded
         /// </summary>
-        Deliveried = 50
+        Refunded = 40,
+        /// <summary>
+        /// Voided
+        /// </summary>
+        Voided = 50,
     }
 }
