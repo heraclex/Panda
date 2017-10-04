@@ -7,27 +7,27 @@ namespace PandaBookStore.Service
 {
     public interface ICustomerService : IService
     {
-        BookModel InsertBook(BookModel model);
+        CustomerModel InsertCustomer(CustomerModel model);
 
-        BookModel UpdateBook(BookModel model);
+        CustomerModel UpdateCustomer(CustomerModel model);
 
         /// <summary>
         /// Delete a book
         /// </summary>
         /// <param name="book">Book</param>
-        void DeleteBook(BookModel model);
+        void DeleteCustomer(CustomerModel model);
 
         /// <summary>
         /// GetAllBooks
         /// </summary>
         /// <returns></returns>
-        IList<BookModel> GetAllBooks();
+        IList<CustomerModel> GetAllCustomers();
 
         /// <summary>
         /// GetBookById
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        BookModel GetBookById(int id);
+        CustomerModel GetCustomerById(int id);
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PandaBookStore.Service
 {
-    public interface ICustomerService : IService
+    public interface IBookService : IService
     {
         BookModel InsertBook(BookModel model);
 

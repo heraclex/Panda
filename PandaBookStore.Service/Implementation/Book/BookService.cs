@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace PandaBookStore.Service
 {
-    public class BookStoreService : ICustomerService
+    public class BookStoreService : IBookService
     {
         #region Constants
         #endregion

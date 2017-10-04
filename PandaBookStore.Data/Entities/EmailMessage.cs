@@ -1,4 +1,5 @@
 ﻿using PandaBookStore.Data.Entities;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace PandaBookStore.Data.Entities
@@ -104,23 +105,23 @@ namespace PandaBookStore.Data.Entities
         /// <summary>
         /// Gets the email account
         /// </summary>
-        public virtual EmailAccount EmailAccount { get; set; }
+        //public virtual EmailAccount EmailAccount { get; set; }
 
 
         /// <summary>
         /// Gets or sets the priority
         /// </summary>
-        public QueuedEmailPriority Priority
-        {
-            get
-            {
-                return (QueuedEmailPriority)this.PriorityId;
-            }
-            set
-            {
-                this.PriorityId = (int)value;
-            }
-        }
+        //public QueuedEmailPriority Priority
+        //{
+        //    get
+        //    {
+        //        return (QueuedEmailPriority)this.PriorityId;
+        //    }
+        //    set
+        //    {
+        //        this.PriorityId = (int)value;
+        //    }
+        //}
 
     }
 }
