@@ -14,7 +14,7 @@ namespace PandaBookStore.WebApp.Controllers
     public class HomeController : Controller
     {
 
-        public HomeController(ICustomerService service)
+        public HomeController(ICategoryService service)
         {
             //var result = repository.Table.ToList();
         }
